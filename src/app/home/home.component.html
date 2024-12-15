@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="navbar">
+    <div class="hamburger">
+      <img
+        src="../../assets/svg/hamburger.svg"
+        alt="menu"
+        srcset=""
+        width="24"
+        height="24"
+      />
+      <span>МЕНЮ</span>
+    </div>
+    <picture>
+      <img src="../../assets/imgs/logo.png" alt="waxa shop" srcset="" />
+    </picture>
+    <div class="basket">
+      <span>КОРЗИНА</span>
+      <mat-icon>
+        <img src="../../assets/svg/basket.svg" alt="basket" />
+      </mat-icon>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="listOfMenus">
+    <ul>
+      @for (item of listOfMenus; track $index) {
+      <li>
+        @if (item.icon) {
+        <img [src]="item.icon" />
+        }
+        <p>{{ item.title }}</p>
+      </li>
+      }
+    </ul>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <mat-grid-list cols="2" rowHeight="fit" style="border: 1px solid red">
+    <mat-grid-tile [rowspan]="2" style="border: 1px solid red">
+      <app-filtr></app-filtr>
+    </mat-grid-tile>
+    <mat-grid-tile cols="1" style="border: 1px solid red">
+      <p>WAXA SHOP — СРЕДСТВА ДЛЯ ОБУВИ — КРЕМ ДЛЯ ОБУВИ</p>
+      <p>Крем для обуви</p>
+    </mat-grid-tile>
+    <mat-grid-tile style="border: 1px solid red">
+      <button (click)="getItems()"></button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

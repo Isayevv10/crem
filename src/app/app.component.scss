@@ -1,0 +1,18 @@
+.app__container {
+  .header {
+    mat-toolbar {
+      background-color: #e5e5e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 60px;
+
+      button {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.container {
+  background-color: #fff;
+  margin: 80px 50px;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 49px;
+
+    .hamburger,
+    .basket {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 3px;
+    }
+  }
+  mat-divider {
+    border-top-color: rgba(233, 233, 233, 1);
+  }
+  .listOfMenus {
+    background-color: #fff;
+    ul {
+      display: flex;
+      justify-content: center;
+      column-gap: 15px;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        list-style: none;
+      }
+    }
+  }
+  ::ng-deep .mat-grid-tile-content {
+    display: block !important;
+  }
+
+  mat-grid-list {
+    min-height: 250px;
+    height: auto;
+  }
+
+  mat-grid-tile:nth-child(2) {
+    background-image: url("../../assets/imgs/pattern.png");
+    background-repeat: no-repeat;
+    color: rgba(38, 38, 38, 1);
+
+    p:nth-child(1) {
+      font-size: 13px;
+      line-height: 26px;
+    }
+
+    p:nth-child(2) {
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 48px;
+    }
+  }
+}
