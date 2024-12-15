@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FiltrComponent } from '../components/filtr/filtr.component';
-import { RealtimeDatabaseService } from '../services/realtime-database.service';
+// import { RealtimeDatabaseService } from '../services/realtime-database.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,7 @@ import { RealtimeDatabaseService } from '../services/realtime-database.service';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  constructor(private dbService: RealtimeDatabaseService) {}
+  constructor() {}
 
   items: any[] = [];
 
@@ -28,17 +28,17 @@ export class HomeComponent {
     { title: 'ПОИСК', icon: '../../assets/svg/search.svg' },
   ];
 
-  getItems() {
-    this.dbService
-      .getItems('users') // Path to your Firebase Realtime Database
-      .then((data) => {
-        if (data) {
-          // If data exists, assign it to the items array
-          this.items = Object.keys(data).map((key) => data[key]);
-        }
-      })
-      .catch((error) => {
-        console.error('Error fetching items:', error);
-      });
-  }
+  // getItems() {
+  //   this.dbService
+  //     .getItems('users') // Path to your Firebase Realtime Database
+  //     .then((data) => {
+  //       if (data) {
+  //         // If data exists, assign it to the items array
+  //         this.items = Object.keys(data).map((key) => data[key]);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching items:', error);
+  //     });
+  // }
 }
