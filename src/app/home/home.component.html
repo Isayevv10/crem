@@ -42,12 +42,17 @@
     <mat-grid-tile [rowspan]="2" style="border: 1px solid red">
       <app-filtr></app-filtr>
     </mat-grid-tile>
-    <mat-grid-tile cols="1" style="border: 1px solid red">
+    <mat-grid-tile style="border: 1px solid red">
       <p>WAXA SHOP — СРЕДСТВА ДЛЯ ОБУВИ — КРЕМ ДЛЯ ОБУВИ</p>
       <p>Крем для обуви</p>
     </mat-grid-tile>
     <mat-grid-tile style="border: 1px solid red">
-      <!-- <button (click)="getItems()"></button> -->
+      <h1>Realtime Database Items</h1>
+      <ul>
+        @for (item of items; track $index) {
+        <li>{{ item.price }}: {{ item.title }}</li>
+        }
+      </ul>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

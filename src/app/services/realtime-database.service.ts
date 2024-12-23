@@ -1,30 +1,23 @@
-// // src/app/realtime-database.service.ts
-// import { Injectable } from '@angular/core';
-// import { getDatabase, ref, get } from 'firebase/database';
+import { Injectable } from '@angular/core';
+import { Database, ref, onValue } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
-// @Injectable({
-//   providedIn: 'root',
-// })
-// export class RealtimeDatabaseService {
-//   private db = getDatabase(); // Get the Firebase Database instance
+@Injectable({
+  providedIn: 'root',
+})
+export class RealtimeDatabaseService {
+  constructor(private db: Database) {}
 
-//   constructor() {}
-
-//   // Method to fetch items from a specific path in the database
-//   getItems(path: string): Promise<any> {
-//     const dbRef = ref(this.db, path); // Create a reference at the specified path
-//     return get(dbRef) // Use get() to retrieve data
-//       .then((snapshot) => {
-//         if (snapshot.exists()) {
-//           return snapshot.val(); // Return the value if it exists
-//         } else {
-//           console.log('No data available');
-//           return null;
-//         }
-//       })
-//       .catch((error) => {
-//         console.error('Error fetching data:', error);
-//         throw error;
-//       });
-//   }
-// }
+  // Fetch all items as an observable
+  getItems(): Observable<any[]> {
+    return new Observable((observer) => {
+      const itemsRef = ref(this.db, 'users');
+      onValue(itemsRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+        const items = data ? data : [];
+        observer.next(items);
+      });
+    });
+  }
+}
