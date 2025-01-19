@@ -40,23 +40,55 @@
 
   mat-grid-list {
     min-height: 250px;
-    height: auto;
+    height: auto !important;
   }
 
-  mat-grid-tile:nth-child(2) {
-    background-image: url("../../assets/imgs/pattern.png");
-    background-repeat: no-repeat;
-    color: rgba(38, 38, 38, 1);
+  .grid_list {
+    display: grid;
+    grid-template-columns: 375px auto;
+    grid-gap: 20px;
+    padding: 25px;
+    border: 1px solid red;
 
-    p:nth-child(1) {
-      font-size: 13px;
-      line-height: 26px;
+    .tile-1 {
+      grid-row: 1 / span 2;
+      border: 1px solid red;
     }
 
-    p:nth-child(2) {
-      font-weight: 700;
-      font-size: 38px;
-      line-height: 48px;
+    .tile-2 {
+      background-image: url("../../assets/imgs/pattern.png");
+      background-repeat: no-repeat;
+      color: rgba(38, 38, 38, 1);
+
+      p:nth-child(1) {
+        font-size: 13px;
+        line-height: 26px;
+      }
+
+      p:nth-child(2) {
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 48px;
+      }
+    }
+
+    .tile-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      .card {
+        background-color: white;
+        cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      .spinner {
+        margin: 0 auto;
+      }
+    }
+
+    mat-card-subtitle {
+      text-align: center;
     }
   }
 }

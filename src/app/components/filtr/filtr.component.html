@@ -1,1 +1,17 @@
-<p>filtr works!</p>
+<div class="price-range-container">
+  <label class="price-range-label">Цена</label>
+  <div>
+    <mat-slider min="5" max="250" discrete>
+      <input
+        [(ngModel)]="minValue"
+        matSliderStartThumb
+        (ngModelChange)="rangeValueInputs($event, 'minValue')"
+      />
+      <input
+        [(ngModel)]="maxValue"
+        matSliderEndThumb
+        (ngModelChange)="rangeValueInputs($event, 'maxValue')"
+      />
+    </mat-slider>
+  </div>
+</div>

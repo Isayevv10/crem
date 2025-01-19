@@ -1,0 +1,29 @@
+.price-range-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  margin: 20px;
+
+  .price-range-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  ngx-slider {
+    margin: 10px 0;
+  }
+
+  .price-inputs {
+    display: flex;
+    justify-content: space-between;
+
+    .price-input {
+      width: 45%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+  }
+}
