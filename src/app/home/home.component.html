@@ -55,7 +55,7 @@
 
       <ng-container *ngIf="!loading">
         <div *ngFor="let item of items; let i = index">
-          <a [routerLink]="['/product', item.id]">
+          <a [routerLink]="['/product', item.id]" class="card-link">
             <mat-card class="card" appearance="outlined">
               <img
                 mat-card-image
@@ -74,4 +74,10 @@
       </ng-container>
     </div>
   </div>
+  <mat-paginator
+    [pageSizeOptions]="[0, 25, 50, 75, 100]"
+    (page)="onPageEvent($event)"
+    showFirstLastButtons
+  >
+  </mat-paginator>
 </div>

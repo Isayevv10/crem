@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -12,6 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataSharingService } from '../shared/data-sharing.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {
+  MatPaginator,
+  MatPaginatorModule,
+  PageEvent,
+} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +32,7 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     RouterModule,
     CommonModule,
+    MatPaginatorModule,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -39,6 +45,9 @@ export class HomeComponent {
 
   items: any[] = [];
   loading: boolean = true;
+  offset: number = 0;
+  limit: number = 25;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   listOfMenus: Array<{ title: string; icon?: string }> = [
     { title: 'СРЕДСТВА ДЛЯ ОБУВИ' },
@@ -62,9 +71,14 @@ export class HomeComponent {
     this.getInitalData();
   }
 
-  getInitalData() {
+  getInitalData(options?: any) {
+    const params = options ?? {
+      offset: this.offset,
+      limit: this.limit,
+    };
+
     this.dbService
-      .getUsers()
+      .getUsers(params.offset, params.limit)
       .pipe(
         finalize(() => {
           this.loading = false;
@@ -74,5 +88,13 @@ export class HomeComponent {
         console.log('initial data', data);
         this.items = data;
       });
+  }
+
+  onPageEvent(event: PageEvent): void {
+    // console.log(event.pageIndex, event.pageSize);
+    this.getInitalData({
+      offset: event.pageSize,
+      limit: this.limit,
+    });
   }
 }

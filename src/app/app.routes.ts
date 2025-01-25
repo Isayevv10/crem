@@ -1,8 +1,14 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ResolverService } from './services/resolver.service';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuardService } from './auth/auth-guard';
 
 export const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: '',
     redirectTo: 'home',
@@ -11,6 +17,7 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'product/:id',
@@ -21,5 +28,9 @@ export const routes: Routes = [
     resolve: {
       product: ResolverService,
     },
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
   },
 ];
