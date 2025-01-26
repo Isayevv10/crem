@@ -27,7 +27,6 @@ export class LoginComponent {
       Validators.minLength(8),
     ]),
   });
-
   submitForm() {
     if (this.loginForm.valid) {
       this.cremService.login(this.loginForm.value).subscribe({

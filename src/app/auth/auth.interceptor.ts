@@ -13,7 +13,7 @@ export const AuthInterceptor: HttpInterceptorFn = (
   next: HttpHandlerFn
 ) => {
   const authService = inject(CremService);
-  const accessToken = authService.getAccessToken();
+  const accessToken = localStorage.getItem('access_token');
 
   // Clone the request to include the access token
   let clonedRequest = req;
@@ -29,7 +29,7 @@ export const AuthInterceptor: HttpInterceptorFn = (
     catchError((error: HttpErrorResponse) => {
       if (error.status === 401) {
         // Attempt to refresh token
-        const refreshToken = authService.getRefreshToken();
+        const refreshToken = localStorage.getItem('refresh_token');
         if (refreshToken) {
           return authService.refreshToken(refreshToken).pipe(
             switchMap((tokens: any) => {

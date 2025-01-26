@@ -91,7 +91,6 @@ export class HomeComponent {
   }
 
   onPageEvent(event: PageEvent): void {
-    // console.log(event.pageIndex, event.pageSize);
     this.getInitalData({
       offset: event.pageSize,
       limit: this.limit,

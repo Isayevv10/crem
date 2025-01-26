@@ -1,18 +1,26 @@
-<form class="form" [formGroup]="loginForm">
-  <div>
-    <mat-form-field class="">
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field class="">
-      <mat-label>Password</mat-label>
-      <input matInput formControlName="password" />
-    </mat-form-field>
-  </div>
+<div class="form-container">
+  <p class="form-header">Get Started Now</p>
+  <form class="form" [formGroup]="loginForm">
+    <div class="form-email">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div class="form-password">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" />
+      </mat-form-field>
+    </div>
 
-  <button type="submit" (click)="submitForm()" [disabled]="loginForm.invalid">
-    Login
-  </button>
-</form>
+    <button
+      type="submit"
+      (click)="submitForm()"
+      [disabled]="loginForm.invalid"
+      class="btn-submit"
+    >
+      Login
+    </button>
+  </form>
+</div>
