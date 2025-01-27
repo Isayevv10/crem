@@ -29,8 +29,10 @@ export class CremService {
     return this.http.post('https://api.escuelajs.co/api/v1/auth/login', param);
   }
   storeTokens(accessToken: string, refreshToken: string): void {
-    localStorage.setItem('access_token', accessToken);
-    localStorage.setItem('refresh_token', refreshToken);
+    if (typeof window !== 'undefined' && localStorage) {
+      localStorage.setItem('access_token', accessToken);
+      localStorage.setItem('refresh_token', refreshToken);
+    }
   }
   refreshToken(refreshToken: string): Observable<any> {
     return this.http.post(
@@ -41,10 +43,15 @@ export class CremService {
     );
   }
   isAuthenticated(): boolean {
-    return !!localStorage.getItem('access_token');
+    if (typeof window !== 'undefined' && localStorage) {
+      return !!localStorage.getItem('access_token');
+    }
+    return false;
   }
   logout(): void {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('refresh_token');
+    if (typeof window !== 'undefined' && localStorage) {
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('refresh_token');
+    }
   }
 }

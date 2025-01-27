@@ -5,28 +5,39 @@
         <mat-icon>
           <img src="../../../assets/svg/location.svg" alt="location" />
         </mat-icon>
-        <span>САНКТ-ПЕТЕРБУРГ</span>
+        <span>{{ "APP.city" | translate }}</span>
       </button>
       <button>
         <mat-icon>
           <img src="../../../assets/svg/phone.svg" alt="location" />
         </mat-icon>
-        <span>8 (812) 577-42-18 / ЗАКАЗАТЬ ЗВОНОК</span>
+        <span>{{ "APP.number" | translate }}</span>
       </button>
       <a routerLink="/login" (click)="logoutSite()">
         <button>
           <mat-icon>
             <img src="../../../assets/svg/login.svg" alt="location" />
           </mat-icon>
-          <span>ВХОД / РЕГИСТРАЦИЯ</span>
+          <span>{{ "APP.logoutButton" | translate }}</span>
         </button>
       </a>
       <button>
         <mat-icon>
           <img src="../../../assets/svg/info.svg" alt="location" />
         </mat-icon>
-        <span>ИЗБРАННОЕ</span>
+        <span>{{ "APP.favorities" | translate }}</span>
       </button>
+
+      <mat-form-field appearance="fill">
+        <mat-select
+          [(ngModel)]="selectedLanguage"
+          (ngModelChange)="onLanguageChange($event)"
+        >
+          @for (lang of supportedLanguages; track $index) {
+          <mat-option [value]="lang">{{ lang | uppercase }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
     </mat-toolbar>
   </div>
 </div>

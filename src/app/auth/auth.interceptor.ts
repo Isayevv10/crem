@@ -13,7 +13,8 @@ export const AuthInterceptor: HttpInterceptorFn = (
   next: HttpHandlerFn
 ) => {
   const authService = inject(CremService);
-  const accessToken = localStorage.getItem('access_token');
+  const accessToken =
+    typeof window !== 'undefined' && localStorage.getItem('access_token');
 
   // Clone the request to include the access token
   let clonedRequest = req;
