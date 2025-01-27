@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CremService } from '../../services/crem.service';
 import { Router } from '@angular/router';
+import { AlertHandlerService } from '../../alert-handler.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   constructor(
+    private alertService: AlertHandlerService,
     private fb: FormBuilder,
     private cremService: CremService,
     private route: Router
@@ -35,10 +37,11 @@ export class LoginComponent {
             response.access_token,
             response.refresh_token
           );
+          this.alertService.handleSuccess('Login successful', 1500);
           this.route.navigate(['/home']);
         },
         error: (error) => {
-          console.log(error.error.message);
+          this.alertService.handlerError(error);
         },
       });
 

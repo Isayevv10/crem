@@ -13,12 +13,14 @@
         </mat-icon>
         <span>8 (812) 577-42-18 / ЗАКАЗАТЬ ЗВОНОК</span>
       </button>
-      <button>
-        <mat-icon>
-          <img src="../../../assets/svg/login.svg" alt="location" />
-        </mat-icon>
-        <span>ВХОД / РЕГИСТРАЦИЯ</span>
-      </button>
+      <a routerLink="/login" (click)="logoutSite()">
+        <button>
+          <mat-icon>
+            <img src="../../../assets/svg/login.svg" alt="location" />
+          </mat-icon>
+          <span>ВХОД / РЕГИСТРАЦИЯ</span>
+        </button>
+      </a>
       <button>
         <mat-icon>
           <img src="../../../assets/svg/info.svg" alt="location" />
