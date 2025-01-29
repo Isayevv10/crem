@@ -16,7 +16,10 @@
   <div class="detailed_info flex-2">
     <div class="category_name">{{ item.category.name }}</div>
     <div class="title">{{ item.title }}</div>
-    <div class="price">Price: {{ item.price }} AZN</div>
-    <div class="desc"><span>Description</span>: {{ item.description }}</div>
+    <div class="price">{{ "PRODUCTDETAILED.price" | translate}}: {{ item.price }} AZN</div>
+    <div class="desc">
+      <span>{{ "PRODUCTDETAILED.description" | translate}}</span
+      >: {{ item.description }}
+    </div>
   </div>
 </div>

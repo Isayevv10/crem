@@ -3,6 +3,30 @@
     "city": "САНКТ-ПЕТЕРБУРГ",
     "number": "8 (812) 577-42-18 / ЗАКАЗАТЬ ЗВОНОК",
     "logoutButton": "ВХОД / РЕГИСТРАЦИЯ",
-    "favorities": "FAVORITES"
+    "favorities": "ИЗБРАННОЕ"
+  },
+  "Filtr": {
+    "price": "Цена"
+  },
+  "Home": {
+    "menu": "Меню",
+    "trashcan": "Корзина",
+    "waxa-shop": "WAXA SHOP — СРЕДСТВА ДЛЯ ОБУВИ — КРЕМ ДЛЯ ОБУВИ",
+    "cream-shoes": "Крем для обуви",
+    "search": "ПОИСК",
+    "brands": "БРЕНДЫ",
+    "accessories": "АКСЕССУАРЫ",
+    "sets": "НАБОРЫ",
+    "purpose": "НАЗНАЧЕНИЕ",
+    "material": "МАТЕРИАЛ",
+    "shoes_products": "ОБУВНЫЕ ИЗДЕЛИЯ",
+    "shaving_grooming": "БРИТЬЕ И УХОД"
+  },
+  "LOGIN": {
+    "title": "Начните сейчас"
+  },
+  "PRODUCTDETAILED": {
+    "price": "Цена",
+    "description": "Описание"
   }
 }

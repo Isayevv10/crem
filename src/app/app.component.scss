@@ -21,5 +21,18 @@
         }
       }
     }
+    .form-field {
+      width: 6%;
+      color: red;
+      margin: auto 0;
+
+      ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: #e5e5e5 !important;
+      }
+
+      ::ng-deep .mat-mdc-select-value {
+        color: #000 !important;
+      }
+    }
   }
 }

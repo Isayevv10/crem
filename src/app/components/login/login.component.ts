@@ -6,11 +6,17 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CremService } from '../../services/crem.service';
 import { Router } from '@angular/router';
 import { AlertHandlerService } from '../../alert-handler.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, ReactiveFormsModule],
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    TranslateModule,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

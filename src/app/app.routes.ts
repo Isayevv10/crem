@@ -3,11 +3,13 @@ import { HomeComponent } from './home/home.component';
 import { ResolverService } from './services/resolver.service';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuardService } from './auth/auth-guard';
+import { AuthGuardLoginService } from './auth/auth-guard-login';
 
 export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [AuthGuardLoginService],
   },
   {
     path: '',

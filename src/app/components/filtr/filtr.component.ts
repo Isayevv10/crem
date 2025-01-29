@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CremService } from '../../services/crem.service';
 import { debounceTime, finalize, Subject } from 'rxjs';
 import { DataSharingService } from '../../shared/data-sharing.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-filtr',
@@ -19,6 +20,7 @@ import { DataSharingService } from '../../shared/data-sharing.service';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
+    TranslateModule,
   ],
   templateUrl: './filtr.component.html',
   styleUrl: './filtr.component.scss',

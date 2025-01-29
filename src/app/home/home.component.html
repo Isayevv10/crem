@@ -8,13 +8,13 @@
         width="24"
         height="24"
       />
-      <span>МЕНЮ</span>
+      <span>{{ "Home.menu" | translate }}</span>
     </div>
     <picture>
       <img src="../../assets/imgs/logo.png" alt="waxa shop" srcset="" />
     </picture>
     <div class="basket">
-      <span>КОРЗИНА</span>
+      <span>{{ "Home.trashcan" | translate }}</span>
       <mat-icon>
         <img src="../../assets/svg/basket.svg" alt="basket" />
       </mat-icon>
@@ -27,10 +27,14 @@
     <ul>
       @for (item of listOfMenus; track $index) {
       <li>
-        @if (item.icon) {
-        <img [src]="item.icon" />
-        }
-        <p>{{ item.title }}</p>
+        <p>
+          @if (item.icon) {
+          <img [src]="item.icon" />
+          }
+        </p>
+        <p>
+          {{ "Home." + item.key.toLowerCase() | translate }}
+        </p>
       </li>
       }
     </ul>
@@ -44,8 +48,8 @@
     </div>
 
     <div class="grid-tile tile-2">
-      <p>WAXA SHOP — СРЕДСТВА ДЛЯ ОБУВИ — КРЕМ ДЛЯ ОБУВИ</p>
-      <p>Крем для обуви</p>
+      <p>{{ "Home.waxa-shop" | translate }}</p>
+      <p>{{ "Home.cream-shoes" | translate }}</p>
     </div>
 
     <div class="grid-tile tile-3">

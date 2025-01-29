@@ -37,16 +37,16 @@
       border: none;
       outline: none;
     }
+
+    ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+      background-color: #e5e5e5 !important;
+      color: brown !important;
+    }
+
+    ::ng-deep
+      .mdc-text-field--filled:not(.mdc-text-field--disabled)
+      .mdc-text-field__input {
+      color: black !important;
+    }
   }
-}
-
-::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-  background-color: #e5e5e5 !important;
-  color: brown !important;
-}
-
-::ng-deep
-  .mdc-text-field--filled:not(.mdc-text-field--disabled)
-  .mdc-text-field__input {
-  color: black !important;
 }

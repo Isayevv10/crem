@@ -17,6 +17,7 @@ import {
   MatPaginatorModule,
   PageEvent,
 } from '@angular/material/paginator';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -33,6 +34,7 @@ import {
     RouterModule,
     CommonModule,
     MatPaginatorModule,
+    TranslateModule,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -49,15 +51,15 @@ export class HomeComponent {
   limit: number = 25;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  listOfMenus: Array<{ title: string; icon?: string }> = [
-    { title: 'СРЕДСТВА ДЛЯ ОБУВИ' },
-    { title: 'МАТЕРИАЛ' },
-    { title: 'НАЗНАЧЕНИЕ' },
-    { title: 'НАБОРЫ' },
-    { title: 'АКСЕССУАРЫ' },
-    { title: 'БРИТЬЕ И УХОД' },
-    { title: 'БРЕНДЫ' },
-    { title: 'ПОИСК', icon: '../../assets/svg/search.svg' },
+  listOfMenus = [
+    { title: 'SHOE PRODUCTS', key: 'shoes_products' },
+    { title: 'MATERIAL', key: 'material' },
+    { title: 'PURPOSE', key: 'purpose' },
+    { title: 'SETS', key: 'sets' },
+    { title: 'ACCESSORIES', key: 'accessories' },
+    { title: 'SHAVING AND GROOMING', key: 'shaving_grooming' },
+    { title: 'BRANDS', key: 'brands' },
+    { title: 'SEARCH', icon: '../../assets/svg/search.svg', key: 'search' },
   ];
 
   ngOnInit(): void {

@@ -4,5 +4,29 @@
     "number": "8 (812) 577-42-18 / ORDER A CALL",
     "logoutButton": "LOGIN / REGISTRATION",
     "favorities": "FAVORITES"
+  },
+  "Filtr": {
+    "price": "Price"
+  },
+  "Home": {
+    "menu": "Menu",
+    "trashcan": "Trashcan",
+    "waxa-shop": "WAXA SHOP — SHOE CARE PRODUCTS — SHOE CREAM",
+    "cream-shoes": "Shoes cream",
+    "search": "SEARCH",
+    "brands": "BRANDS",
+    "accessories": "ACCESSORIES",
+    "sets": "SETS",
+    "purpose": "PURPOSE",
+    "material": "MATERIAL",
+    "shoes_products": "SHOE PRODUCTS",
+    "shaving_grooming": "SHAVING AND GROOMING"
+  },
+  "LOGIN": {
+    "title": "Get Started Now"
+  },
+  "PRODUCTDETAILED": {
+    "price": "Price",
+    "description": "Description"
   }
 }

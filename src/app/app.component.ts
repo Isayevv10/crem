@@ -50,6 +50,5 @@ export class AppComponent {
 
   onLanguageChange(lang: any): void {
     this.translationService.switchLanguage(lang);
-    // this.selectedLanguage = lang;
   }
 }
